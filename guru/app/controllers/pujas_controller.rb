@@ -1,0 +1,2 @@
+class PujasController < ApplicationController
+end
