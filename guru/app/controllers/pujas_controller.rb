@@ -1,6 +1,6 @@
 class PujasController < ApplicationController
   def show
-    @article = Article.find(params[:id])
+    @puja = Puja.find(params[:id])
   end
 
   def new
