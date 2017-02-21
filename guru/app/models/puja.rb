@@ -1,0 +1,2 @@
+class Puja < ApplicationRecord
+end
