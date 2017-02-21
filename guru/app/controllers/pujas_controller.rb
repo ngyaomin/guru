@@ -7,7 +7,7 @@ class PujasController < ApplicationController
   end
 
   def create
-    @puja = Puja.new(params[:puja])
+    @puja = Puja.new(puja_params)
 
     @puja.save
     redirect_to @puja
