@@ -4,7 +4,7 @@ class CreatePujas < ActiveRecord::Migration[5.0]
       t.string :name
       t.text :description
       t.text :benefit
-      t.number :suggested_offering
+      t.numeric :suggested_offering
 
       t.timestamps
     end
