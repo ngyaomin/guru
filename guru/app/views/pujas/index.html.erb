@@ -1,0 +1,12 @@
+<h1> listing of pujas available </h1>
+
+<% @pujas.each do |puja| %>
+
+     <%= puja.name %> <br>
+     <%= puja.description %> <br>
+     <%= puja.benefit %> <br>
+     <%= puja.suggested_offering %> <br>
+     <%= link_to 'Show', puja_path(puja) %> <br>
+     <br>
+
+<% end %>
