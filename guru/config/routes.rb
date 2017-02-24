@@ -3,5 +3,8 @@ Rails.application.routes.draw do
   get 'lineages/index'
   root 'lineages#index'
 
+  resources :pictures
+  get 'lineages/index'
+  root 'lineages#index'
 
 end
