@@ -10,4 +10,9 @@ class PicturesController < ApplicationController
     redirect_to @picture
   end
 
+  private
+    def picture_params
+      params.require(:picture).permit(:title, :description)
+    end
+
 end
