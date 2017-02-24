@@ -1,0 +1,12 @@
+<h1> listing of pujas pictures </h1>
+
+<% @pictures.each do |picture| %>
+
+    <p>Tile: <%= picture.title %> </p>
+    <p>Description:<br> <%= picture.description.truncate_words(25) %> </p>
+    <%= link_to 'More Details', picture_path(picture) %> <br>
+     <br>
+
+<% end %>
+
+<%= link_to 'New picture', new_picture_path %>
