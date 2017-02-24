@@ -1,7 +1,8 @@
 <h1>Post a new picture here</h1>
 
 
-<%= form_for :picture do |f| %>
+
+<%= form_for :picture, url: pictures_path do |f| %>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -15,5 +16,5 @@
   <p>
     <%= f.submit %>
   </p>
-  
+
 <% end %>
