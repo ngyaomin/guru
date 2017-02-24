@@ -2,8 +2,12 @@ class PicturesController < ApplicationController
   def new
   end
 
+
   def create
-    render plain: params[:picture].inspect
+    @picture = Picture.new(params[:picture])
+
+    @picture.save
+    redirect_to @picture
   end
 
 end
