@@ -1,22 +1,25 @@
 class PujasController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  def index
-   @pujas = Puja.all
-  end
 
-  def show
-    @puja = Puja.find(params[:id])
-  end
+  if current_user.admin?
+    def index
+     @pujas = Puja.all
+    end
 
-  def new
-    @puja = current_user.pujas.build
-  end
+    def show
+      @puja = Puja.find(params[:id])
+    end
 
-  def create
-    @puja = current_user.pujas.build(puja_params)
+    def new
+      @puja = current_user.pujas.build
+    end
 
-    @puja.save
-    redirect_to @puja
+    def create
+      @puja = current_user.pujas.build(puja_params)
+
+      @puja.save
+      redirect_to @puja
+    end
   end
 
   private
