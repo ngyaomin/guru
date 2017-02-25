@@ -12,10 +12,12 @@ class PujasController < ApplicationController
 
     def new
       @puja = current_user.pujas.build
+      authorize! :create, @puja
     end
 
     def create
       @puja = current_user.pujas.build(puja_params)
+      authorize! :create, @puja
 
       @puja.save
       redirect_to @puja
