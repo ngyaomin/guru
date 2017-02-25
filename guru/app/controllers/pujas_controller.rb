@@ -1,4 +1,5 @@
 class PujasController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
    @pujas = Puja.all
   end
@@ -8,10 +9,11 @@ class PujasController < ApplicationController
   end
 
   def new
+    @puja = current_user.pujas.build
   end
 
   def create
-    @puja = Puja.new(puja_params)
+    @puja = current_user.pujas.build(puja_params)
 
     @puja.save
     redirect_to @puja

@@ -1,4 +1,5 @@
 class PicturesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
    @pictures = Picture.all.order("created_at DESC")
   end
@@ -9,10 +10,11 @@ class PicturesController < ApplicationController
    end
 
   def new
+    @picture = current_user.pictures.build
   end
 
   def create
-    @picture = Picture.new(picture_params)
+    @picture = current_user.pictures.build(picture_params)
 
     @picture.save
     redirect_to @picture

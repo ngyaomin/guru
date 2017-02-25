@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
   resources :pujas
   get 'lineages/index'
   root 'lineages#index'
