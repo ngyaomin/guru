@@ -4,6 +4,7 @@
 
 
     <p>Tile: <%= picture.title %> </p>
+    <%= image_tag picture.picture_image.thumb.url %>
     <p>Description:<br> <%= picture.description.truncate_words(25) %> </p>
 
     <%= link_to 'Click on more details to see picture', picture_path(picture) %> <br>
