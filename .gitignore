@@ -1,2 +1,4 @@
 
 guru/config/initializers/fb\.yml
+
+guru/config/initializers/devise\.rb
