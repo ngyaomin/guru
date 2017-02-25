@@ -1,7 +1,7 @@
 class PujasController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
 
-  if current_user.admin?
+  # if current_user.admin?
     def index
      @pujas = Puja.all
     end
@@ -19,7 +19,7 @@ class PujasController < ApplicationController
 
       @puja.save
       redirect_to @puja
-    end
+    # end
   end
 
   private
