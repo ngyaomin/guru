@@ -12,5 +12,6 @@
 
 <% end %>
 
-
+<% if can? :create, @picture %>
   <%= link_to 'New picture', new_picture_path %>
+<% end %>

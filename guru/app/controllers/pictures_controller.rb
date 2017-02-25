@@ -11,11 +11,12 @@ class PicturesController < ApplicationController
 
   def new
     @picture = current_user.pictures.build
+    authorize! :create, @picture
   end
 
   def create
     @picture = current_user.pictures.build(picture_params)
-
+    authorize! :create, @picture
     @picture.save
     redirect_to @picture
   end
