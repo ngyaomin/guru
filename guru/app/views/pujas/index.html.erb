@@ -3,7 +3,7 @@
 <% @pujas.each do |puja| %>
 
     <p>Name: <%= puja.name %> </p>
-    <p>Description:<br> <%= puja.description.truncate_words(25) %> </p>
+    <p>Descriptions:<br> <%= puja.description.truncate_words(25) %> </p>
     <p>Benefit:<br> <%= puja.benefit.truncate_words(25) %> </p>
     <p>Suggested_offering: <%= puja.suggested_offering %> </p>
     <%= link_to 'More Details', puja_path(puja) %> <br>
