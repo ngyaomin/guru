@@ -27,6 +27,15 @@ class PujasController < ApplicationController
       @puja.save
       redirect_to @puja
 
+    def update
+      @puja = Puja.find(params[:id])
+      if @puja.update(puja_params)
+        redirect_to @puja
+      else
+        render 'edit'
+      end
+    end
+
   end
 
   private
