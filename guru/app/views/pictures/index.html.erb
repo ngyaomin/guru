@@ -9,7 +9,7 @@
 
     <%= link_to 'Click on more details to see picture', picture_path(picture) %> <br>
     <% if can? :update, @puja %>
-      <%= link_to 'Edit', edit_puja_path(puja) %>
+      <%= link_to 'Edit', edit_picture_path(picture) %>
     <% end %>
      <br>
 
