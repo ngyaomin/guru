@@ -23,3 +23,5 @@
 <% if can? :create, @picture %>
   <%= link_to 'New picture', new_picture_path %>
 <% end %>
+
+<%= will_paginate @pictures %>
