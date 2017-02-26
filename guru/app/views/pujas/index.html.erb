@@ -24,4 +24,10 @@
   <%= link_to 'New puja', new_puja_path %>
 <% end %>
 <!-- note that this link would be lock in the future so that only admin can access -->
-<%= will_paginate @pujas %>
+<br>
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @pujas %>
+    </div>
+    <%= will_paginate @pujas, :container => false %>
+  </div>
