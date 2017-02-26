@@ -24,4 +24,9 @@
   <%= link_to 'New picture', new_picture_path %>
 <% end %>
 
-<%= will_paginate @pictures %>
+<div class="digg_pagination">
+    <div class="page_info">
+      <%= page_entries_info @pictures %>
+    </div>
+    <%= will_paginate @pictures, :container => false %>
+  </div>
