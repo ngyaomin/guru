@@ -15,6 +15,11 @@ class PujasController < ApplicationController
       authorize! :create, @puja
     end
 
+    def edit
+      @puja = Puja.find(params[:id])
+      authorize! :update, @puja
+    end
+
     def create
       @puja = current_user.pujas.build(puja_params)
       authorize! :create, @puja
