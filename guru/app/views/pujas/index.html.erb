@@ -10,6 +10,11 @@
     <% if can? :update, @puja %>
       <%= link_to 'Edit', edit_puja_path(puja) %>
     <% end %>
+    <% if can? :destroy, @puja %>
+      <%= link_to 'Destroy', puja_path(puja),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
+    <% end %>
      <br>
 
 <% end %>

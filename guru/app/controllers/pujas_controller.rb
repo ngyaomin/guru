@@ -37,6 +37,14 @@ class PujasController < ApplicationController
       end
     end
 
+    def destroy
+      @puja = Puja.find(params[:id])
+      authorize! :destroy, @puja
+      @puja.destroy
+
+      redirect_to pujas_path
+    end
+
   end
 
   private

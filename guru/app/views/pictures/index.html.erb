@@ -11,7 +11,7 @@
     <% if can? :update, @picture %>
       <%= link_to 'Edit', edit_picture_path(picture) %>
     <% end %>
-    <% if can? :update, @picture %>
+    <% if can? :destroy, @picture %>
       <%= link_to 'Destroy', picture_path(picture),
                 method: :delete,
                 data: { confirm: 'Are you sure?' } %>
