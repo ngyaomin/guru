@@ -4,7 +4,6 @@ class PicturesController < ApplicationController
    @pictures = Picture.all.order("created_at DESC")
   end
 
-
   def show
      @picture = Picture.find(params[:id])
    end
@@ -14,11 +13,26 @@ class PicturesController < ApplicationController
     authorize! :create, @picture
   end
 
+  def edit
+    @picture = Picture.find(params[:id])
+    authorize! :update, @picture
+  end
+
   def create
     @picture = current_user.pictures.build(picture_params)
     authorize! :create, @picture
     @picture.save
     redirect_to @picture
+  end
+
+  def update
+    @picture = Picture.find(params[:id])
+    authorize! :update, @picture
+    if @picture.update(picture_params)
+      redirect_to @picture
+    else
+      render 'edit'
+    end
   end
 
   private
