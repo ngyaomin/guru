@@ -7,6 +7,7 @@
     <p>Benefit:<br> <%= puja.benefit.truncate_words(25) %> </p>
     <p>Suggested_offering: <%= puja.suggested_offering %> </p>
     <%= link_to 'More Details', puja_path(puja) %> <br>
+    <%= link_to 'Edit', edit_puja_path(puja) %>
      <br>
 
 <% end %>

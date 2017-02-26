@@ -29,6 +29,7 @@ class PujasController < ApplicationController
 
     def update
       @puja = Puja.find(params[:id])
+      authorize! :update, @puja
       if @puja.update(puja_params)
         redirect_to @puja
       else
