@@ -8,8 +8,13 @@
     <p>Description:<br> <%= picture.description.truncate_words(25) %> </p>
 
     <%= link_to 'Click on more details to see picture', picture_path(picture) %> <br>
-    <% if can? :update, @puja %>
+    <% if can? :update, @picture %>
       <%= link_to 'Edit', edit_picture_path(picture) %>
+    <% end %>
+    <% if can? :update, @picture %>
+      <%= link_to 'Destroy', picture_path(picture),
+                method: :delete,
+                data: { confirm: 'Are you sure?' } %>
     <% end %>
      <br>
 

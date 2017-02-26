@@ -41,7 +41,7 @@ class PicturesController < ApplicationController
     authorize! :destroy, @picture
     @picture.destroy
 
-    redirect_to articles_path
+    redirect_to pictures_path
   end
 
   private
