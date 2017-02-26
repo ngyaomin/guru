@@ -8,6 +8,9 @@
     <p>Description:<br> <%= picture.description.truncate_words(25) %> </p>
 
     <%= link_to 'Click on more details to see picture', picture_path(picture) %> <br>
+    <% if can? :update, @puja %>
+      <%= link_to 'Edit', edit_puja_path(puja) %>
+    <% end %>
      <br>
 
 <% end %>
