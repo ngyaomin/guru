@@ -3,7 +3,7 @@ class PujasController < ApplicationController
 
 
     def index
-     @pujas = Puja.all
+     @pujas = Puja.all.paginate(page: params[:page], per_page: 6).order("created_at DESC")
     end
 
     def show
