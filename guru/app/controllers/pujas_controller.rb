@@ -26,6 +26,7 @@ class PujasController < ApplicationController
 
       @puja.save
       redirect_to @puja
+    end
 
     def update
       @puja = Puja.find(params[:id])
@@ -45,7 +46,7 @@ class PujasController < ApplicationController
       redirect_to pujas_path
     end
 
-  end
+
 
   private
   def puja_params
